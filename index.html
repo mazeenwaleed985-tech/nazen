@@ -22,11 +22,12 @@
                 extend: {
                     colors: {
                         brand: {
-                            darkest: '#0A1931',   // Deep dark primary background
-                            surface: '#1A3D63',   // Card & surface containers
-                            accent: '#4A7FA7',    // Ocean/slate blue accent
-                            light: '#B3CFE5',     // Soft highlight ice blue
-                            white: '#F6FAFD',     // Pure clean snow white
+                            darkest: '#011B2F',   // Oxford Blue
+                            surface: '#002A45',   // Prussian Blue
+                            accent: '#003F66',    // Indigo Dye
+                            light: '#FFD358',     // Mustard
+                            gold: '#FFB915',      // Selective Yellow
+                            white: '#FFFFFF',     // Clean White text
                         }
                     },
                     fontFamily: {
@@ -86,13 +87,13 @@
 
         /* Gradient Text */
         .gradient-text {
-            background: linear-gradient(135deg, #F6FAFD 0%, #B3CFE5 50%, #4A7FA7 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFD358 50%, #FFB915 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .gradient-accent {
-            background: linear-gradient(135deg, #B3CFE5 0%, #4A7FA7 100%);
+            background: linear-gradient(135deg, #FFD358 0%, #003F66 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -102,7 +103,7 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(74, 127, 167, 0.18) 0%, rgba(10, 25, 49, 0) 70%);
+            background: radial-gradient(circle, rgba(255, 211, 88, 0.15) 0%, rgba(1, 27, 47, 0) 70%);
             top: -100px;
             right: -100px;
             z-index: 0;
@@ -113,7 +114,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(26, 61, 99, 0.3) 0%, rgba(10, 25, 49, 0) 70%);
+            background: radial-gradient(circle, rgba(0, 63, 102, 0.25) 0%, rgba(1, 27, 47, 0) 70%);
             top: 40%;
             left: -150px;
             z-index: 0;
@@ -148,7 +149,7 @@
                 <a href="#portfolio" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Projects</a>
                 <a href="#experience" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Experience</a>
                 <a href="#education" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Education</a>
-                <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-accent hover:bg-brand-light hover:text-brand-darkest text-brand-white transition-all duration-300 shadow-glow flex items-center gap-2">
+                <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-gold hover:bg-brand-light text-brand-darkest transition-all duration-300 shadow-glow flex items-center gap-2">
                     <i class="fa-regular fa-paper-plane text-xs"></i>
                     <span>Let's Talk</span>
                 </a>
@@ -167,7 +168,7 @@
             <a href="#portfolio" class="block text-brand-light/90 hover:text-brand-white py-1">Portfolio Projects</a>
             <a href="#experience" class="block text-brand-light/90 hover:text-brand-white py-1">Experience</a>
             <a href="#education" class="block text-brand-light/90 hover:text-brand-white py-1">Education & Certifications</a>
-            <a href="#contact" class="block text-center mt-3 px-5 py-2.5 rounded-xl text-sm font-bold bg-brand-accent text-brand-white">Get in Touch</a>
+            <a href="#contact" class="block text-center mt-3 px-5 py-2.5 rounded-xl text-sm font-bold bg-brand-gold text-brand-darkest">Get in Touch</a>
         </div>
     </nav>
 
@@ -212,7 +213,7 @@
 
                     <!-- Actions Buttons -->
                     <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                        <a href="#portfolio" class="px-8 py-3.5 rounded-full font-bold bg-brand-accent hover:bg-brand-light hover:text-brand-darkest text-brand-white transition-all duration-300 shadow-glow flex items-center gap-3 group">
+                        <a href="#portfolio" class="px-8 py-3.5 rounded-full font-bold bg-brand-gold hover:bg-brand-light text-brand-darkest transition-all duration-300 shadow-glow flex items-center gap-3 group">
                             <span>Explore My Work</span>
                             <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
@@ -473,7 +474,7 @@
 
             <!-- Project Filter Buttons -->
             <div class="flex flex-wrap gap-2.5 mb-10">
-                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-accent text-brand-white" data-filter="all">All Projects</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-gold text-brand-darkest" data-filter="all">All Projects</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="branding">Branding & Logo</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="social">Social Media Ads</button>
                 <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="manipulation">Photo Retouching</button>
@@ -985,11 +986,11 @@
             btn.addEventListener('click', () => {
                 // Update active button state
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-brand-accent', 'text-brand-white');
+                    b.classList.remove('bg-brand-gold', 'text-brand-darkest');
                     b.classList.add('bg-brand-surface', 'text-brand-light');
                 });
                 btn.classList.remove('bg-brand-surface', 'text-brand-light');
-                btn.classList.add('bg-brand-accent', 'text-brand-white');
+                btn.classList.add('bg-brand-gold', 'text-brand-darkest');
 
                 const filterValue = btn.getAttribute('data-filter');
 
