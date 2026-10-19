@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazen Walid | Graphic Designer & Visual Identity Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration with Mazen's Exact Brand Identity Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            darkest: '#0A1931',   // Deep dark primary background
+                            surface: '#1A3D63',   // Card & surface containers
+                            accent: '#4A7FA7',    // Ocean/slate blue accent
+                            light: '#B3CFE5',     // Soft highlight ice blue
+                            white: '#F6FAFD',     // Pure clean snow white
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Cairo', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(179, 207, 229, 0.25)',
+                        'glow-accent': '0 0 30px -5px rgba(74, 127, 167, 0.4)',
+                        'card': '0 10px 30px -10px rgba(10, 25, 49, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A1931;
+            color: #F6FAFD;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A1931;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A3D63;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4A7FA7;
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(26, 61, 99, 0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(179, 207, 229, 0.15);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(179, 207, 229, 0.35);
+        }
+
+        .glass-nav {
+            background: rgba(10, 25, 49, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(179, 207, 229, 0.1);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #F6FAFD 0%, #B3CFE5 50%, #4A7FA7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, #B3CFE5 0%, #4A7FA7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Background ambient orbs */
+        .ambient-glow-1 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 127, 167, 0.18) 0%, rgba(10, 25, 49, 0) 70%);
+            top: -100px;
+            right: -100px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 61, 99, 0.3) 0%, rgba(10, 25, 49, 0) 70%);
+            top: 40%;
+            left: -150px;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-accent selection:text-brand-white relative min-h-screen">
+
+    <!-- Ambient Lighting Background Effects -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent to-brand-light flex items-center justify-center text-brand-darkest font-extrabold text-xl shadow-glow transition-transform duration-300 group-hover:scale-105">
+                    M
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-brand-white group-hover:text-brand-light transition-colors">MAZEN WALID</span>
+                    <span class="block text-xs text-brand-light/70 tracking-widest font-mono uppercase">Mazen_Pixel</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">About</a>
+                <a href="#skills" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Skills</a>
+                <a href="#portfolio" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Projects</a>
+                <a href="#experience" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Experience</a>
+                <a href="#education" class="text-sm font-medium text-brand-light/80 hover:text-brand-white transition-colors">Education</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-accent hover:bg-brand-light hover:text-brand-darkest text-brand-white transition-all duration-300 shadow-glow flex items-center gap-2">
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    <span>Let's Talk</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-brand-light hover:text-brand-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-6 space-y-4 border-t border-brand-surface/60 bg-brand-darkest/95 backdrop-blur-xl">
+            <a href="#about" class="block text-brand-light/90 hover:text-brand-white py-1">About Me</a>
+            <a href="#skills" class="block text-brand-light/90 hover:text-brand-white py-1">Skills & Tools</a>
+            <a href="#portfolio" class="block text-brand-light/90 hover:text-brand-white py-1">Portfolio Projects</a>
+            <a href="#experience" class="block text-brand-light/90 hover:text-brand-white py-1">Experience</a>
+            <a href="#education" class="block text-brand-light/90 hover:text-brand-white py-1">Education & Certifications</a>
+            <a href="#contact" class="block text-center mt-3 px-5 py-2.5 rounded-xl text-sm font-bold bg-brand-accent text-brand-white">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left Column: Introduction & Call to Action -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right" data-aos-duration="900">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-accent/30 text-xs font-semibold text-brand-light">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Available for Freelance & Creative Roles
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                        Transforming Ideas into <br class="hidden sm:block">
+                        <span class="gradient-text">Impactful Visuals</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-brand-light/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Hi, I'm <strong class="text-brand-white font-semibold">Mazen Walid</strong> — Graphic Designer with <span class="text-brand-light font-semibold">4+ years</span> of expertise in crafting high-converting social media creatives, memorable brand identities, and creative advertising.
+                    </p>
+
+                    <!-- Key stats badge row -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-8">
+                        <div>
+                            <span class="block text-3xl font-extrabold text-brand-white">4+</span>
+                            <span class="text-xs text-brand-light/70 uppercase tracking-wider">Years Experience</span>
+                        </div>
+                        <div class="w-px h-10 bg-brand-surface"></div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-brand-white">150+</span>
+                            <span class="text-xs text-brand-light/70 uppercase tracking-wider">Visual Assets</span>
+                        </div>
+                        <div class="w-px h-10 bg-brand-surface"></div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-brand-white">100%</span>
+                            <span class="text-xs text-brand-light/70 uppercase tracking-wider">Brand Alignment</span>
+                        </div>
+                    </div>
+
+                    <!-- Actions Buttons -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#portfolio" class="px-8 py-3.5 rounded-full font-bold bg-brand-accent hover:bg-brand-light hover:text-brand-darkest text-brand-white transition-all duration-300 shadow-glow flex items-center gap-3 group">
+                            <span>Explore My Work</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+
+                        <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-full font-bold glass-card hover:bg-brand-surface/70 text-brand-white transition-all duration-300 flex items-center gap-3">
+                            <i class="fa-brands fa-behance text-lg text-brand-light"></i>
+                            <span>Behance Profile</span>
+                        </a>
+
+                        <a href="https://wa.me/2010103537681" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-full font-bold glass-card hover:bg-emerald-600/30 text-emerald-300 transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span class="hidden sm:inline">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Persona Card -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative glow -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-light rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+
+                        <div class="relative glass-card rounded-3xl p-8 border border-brand-light/20 shadow-card">
+                            <!-- Header tag -->
+                            <div class="flex items-center justify-between pb-6 border-b border-brand-surface">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-brand-surface flex items-center justify-center text-brand-light border border-brand-accent/40">
+                                        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-brand-white text-base">Graphic Designer</h3>
+                                        <p class="text-xs text-brand-light/70">Visual Identity Specialist</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-brand-surface/80 border border-brand-accent/30 text-xs font-mono text-brand-light">2022 - 2026</span>
+                            </div>
+
+                            <!-- Creative Tool Icons Grid -->
+                            <div class="py-6 space-y-4">
+                                <p class="text-xs font-semibold text-brand-light/60 tracking-wider uppercase">Mastered Software</p>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="p-3.5 rounded-2xl bg-brand-surface/60 border border-brand-light/10 text-center hover:border-brand-accent/60 transition-colors">
+                                        <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-[#001E36] flex items-center justify-center font-black text-[#31A8FF] text-base">Ps</div>
+                                        <span class="text-xs font-medium block text-brand-light">Photoshop</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-brand-surface/60 border border-brand-light/10 text-center hover:border-brand-accent/60 transition-colors">
+                                        <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-[#330000] flex items-center justify-center font-black text-[#FF9A00] text-base">Ai</div>
+                                        <span class="text-xs font-medium block text-brand-light">Illustrator</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-brand-surface/60 border border-brand-light/10 text-center hover:border-brand-accent/60 transition-colors">
+                                        <div class="w-10 h-10 mx-auto mb-2 rounded-xl bg-[#2b031b] flex items-center justify-center font-black text-[#FF3366] text-base">Id</div>
+                                        <span class="text-xs font-medium block text-brand-light">InDesign</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick contact info badge inside card -->
+                            <div class="pt-4 border-t border-brand-surface space-y-2 text-xs text-brand-light/80">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-location-dot text-brand-accent w-4 text-center"></i>
+                                    <span>Giza, Egypt</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-envelope text-brand-accent w-4 text-center"></i>
+                                    <span class="truncate">mazenmazen129u@gmail.com</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-phone text-brand-accent w-4 text-center"></i>
+                                    <span>010103537681</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-6 relative border-t border-brand-surface/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block">Professional Summary</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-white">Crafting Visuals that Speak Loudly</h2>
+                <p class="text-brand-light/70 text-base leading-relaxed">
+                    Passionate Graphic Designer with over 4 years of proven track record across full-time and freelance projects.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-surface border border-brand-accent/40 flex items-center justify-center text-brand-light text-2xl mb-6">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-white mb-3">Branding & Identity</h3>
+                    <p class="text-brand-light/75 text-sm leading-relaxed">
+                        Developing cohesive visual systems, logo suites, color palettes, and brand guidelines that set businesses apart from competitors.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-surface border border-brand-accent/40 flex items-center justify-center text-brand-light text-2xl mb-6">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-white mb-3">Social Media & Ads</h3>
+                    <p class="text-brand-light/75 text-sm leading-relaxed">
+                        Designing high-engagement creatives and digital marketing banners tailored to maximize click-through rates and brand awareness.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card rounded-3xl p-8 hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-surface border border-brand-accent/40 flex items-center justify-center text-brand-light text-2xl mb-6">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-white mb-3">Retouching & Print</h3>
+                    <p class="text-brand-light/75 text-sm leading-relaxed">
+                        Professional photo manipulation, advanced image retouching, press-ready print materials, brochures, and publication layouts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section id="skills" class="py-20 px-6 bg-brand-darkest/60 border-t border-brand-surface/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block">Core Competencies</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-white">Skills & Toolkit</h2>
+                <p class="text-brand-light/70 text-base">A breakdown of my software proficiency and technical graphic design capabilities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Design Disciplines -->
+                <div class="glass-card rounded-3xl p-8 border border-brand-light/10" data-aos="fade-right">
+                    <h3 class="text-xl font-bold text-brand-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-brand-accent"></i>
+                        Design Specializations
+                    </h3>
+
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-hashtag text-brand-accent mr-1"></i> Social Media Design
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-bezier-curve text-brand-accent mr-1"></i> Branding & Visual Identity
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-shapes text-brand-accent mr-1"></i> Logo Design
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-print text-brand-accent mr-1"></i> Print & Editorial Design
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-camera-retro text-brand-accent mr-1"></i> Photo Editing & Retouching
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-table-cells text-brand-accent mr-1"></i> Layout Design & Typography
+                        </span>
+                        <span class="px-4 py-2.5 rounded-xl bg-brand-surface/80 border border-brand-accent/30 text-sm font-semibold text-brand-white hover:border-brand-light transition-colors">
+                            <i class="fa-solid fa-rectangle-ad text-brand-accent mr-1"></i> Digital Advertising Campaigns
+                        </span>
+                    </div>
+
+                    <!-- Languages Section -->
+                    <div class="mt-8 pt-6 border-t border-brand-surface">
+                        <h4 class="text-sm font-bold text-brand-light uppercase tracking-wider mb-4">Languages</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-brand-surface/50 border border-brand-light/10">
+                                <span class="text-base font-bold text-brand-white block">Arabic</span>
+                                <span class="text-xs text-brand-light/70">Native Language (اللغة الأم)</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-brand-surface/50 border border-brand-light/10">
+                                <span class="text-base font-bold text-brand-white block">English</span>
+                                <span class="text-xs text-brand-light/70">Intermediate Working Proficiency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Mastery Progress Bars -->
+                <div class="glass-card rounded-3xl p-8 border border-brand-light/10 space-y-6" data-aos="fade-left" data-aos-delay="150">
+                    <h3 class="text-xl font-bold text-brand-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-laptop-code text-brand-accent"></i>
+                        Software Proficiency
+                    </h3>
+
+                    <!-- Photoshop -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="text-[#31A8FF] font-black">Ps</span>
+                                Adobe Photoshop
+                            </span>
+                            <span class="text-brand-light font-mono">98%</span>
+                        </div>
+                        <div class="w-full bg-brand-surface h-3 rounded-full overflow-hidden p-0.5 border border-brand-accent/20">
+                            <div class="bg-gradient-to-r from-brand-accent to-brand-light h-full rounded-full transition-all duration-1000" style="width: 98%"></div>
+                        </div>
+                        <p class="text-xs text-brand-light/60">Photo Manipulation, Retouching, Creative Ads, Compositing</p>
+                    </div>
+
+                    <!-- Illustrator -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="text-[#FF9A00] font-black">Ai</span>
+                                Adobe Illustrator
+                            </span>
+                            <span class="text-brand-light font-mono">95%</span>
+                        </div>
+                        <div class="w-full bg-brand-surface h-3 rounded-full overflow-hidden p-0.5 border border-brand-accent/20">
+                            <div class="bg-gradient-to-r from-brand-accent to-brand-light h-full rounded-full transition-all duration-1000" style="width: 95%"></div>
+                        </div>
+                        <p class="text-xs text-brand-light/60">Vector Arts, Logo Design, Brand Visual Identity, Icons</p>
+                    </div>
+
+                    <!-- InDesign -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-sm font-semibold">
+                            <span class="flex items-center gap-2">
+                                <span class="text-[#FF3366] font-black">Id</span>
+                                Adobe InDesign
+                            </span>
+                            <span class="text-brand-light font-mono">88%</span>
+                        </div>
+                        <div class="w-full bg-brand-surface h-3 rounded-full overflow-hidden p-0.5 border border-brand-accent/20">
+                            <div class="bg-gradient-to-r from-brand-accent to-brand-light h-full rounded-full transition-all duration-1000" style="width: 88%"></div>
+                        </div>
+                        <p class="text-xs text-brand-light/60">Multi-page Catalogs, Company Profiles, Print Publications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Projects Section -->
+    <section id="portfolio" class="py-20 px-6 border-t border-brand-surface/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block mb-3">Featured Creations</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-white">Selected Works & Projects</h2>
+                    <p class="text-brand-light/70 text-base mt-2">A showcase of visual identity, social media creatives, and advertising projects.</p>
+                </div>
+
+                <!-- Behance Action Link -->
+                <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="self-start md:self-end px-6 py-3 rounded-full bg-brand-surface hover:bg-brand-accent text-brand-white text-sm font-bold border border-brand-light/20 transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-brands fa-behance text-brand-light text-base"></i>
+                    <span>View All on Behance (Mazen_Pixel)</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Project Filter Buttons -->
+            <div class="flex flex-wrap gap-2.5 mb-10">
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-accent text-brand-white" data-filter="all">All Projects</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="branding">Branding & Logo</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="social">Social Media Ads</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="manipulation">Photo Retouching</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-brand-surface text-brand-light hover:text-brand-white" data-filter="print">Print & Editorial</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 7: Bubble Kids Campaign -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group cursor-pointer shadow-card hover:shadow-glow" data-category="social" onclick="openLightbox(['images/bubble-1.jpg', 'images/bubble-2.jpg', 'images/bubble-3.jpg'], 'Bubble Kids Campaign: Visual Comfort & Softness')">
+                    <div class="h-60 relative overflow-hidden flex items-center justify-center p-6 bg-brand-surface">
+                        <img src="images/bubble-1.jpg" alt="Bubble Kids Campaign" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/90 via-brand-darkest/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="relative z-10 text-center space-y-2 mt-auto">
+                            <span class="px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/20 backdrop-blur-md">Click to view 3 campaign images</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors flex items-center justify-between">
+                            <span>Bubble Kids Campaign</span>
+                            <i class="fa-solid fa-images text-brand-accent text-sm"></i>
+                        </h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            A strategic visual campaign designed to build emotional connection and trust with soft lighting and relatable imagery for kids.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Photoshop • Branding</span>
+                            <span class="text-xs font-bold text-brand-accent flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
+                                <span>Explore Gallery</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1: Brand Identity Design -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="branding">
+                    <div class="h-60 bg-gradient-to-br from-brand-surface via-brand-darkest to-[#0c2445] relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-500" style="background-image: radial-gradient(circle at 50% 50%, rgba(74, 127, 167, 0.4) 0%, rgba(10, 25, 49, 0.9) 100%);"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:rotate-6 transition-transform">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">Brand Identity System</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Branding</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">Corporate Visual Identity & Guidelines</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Comprehensive brand identity featuring logo suite, brand stationery, business cards, typography rules, and color palette.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Adobe Illustrator</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Social Media Campaign -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="social">
+                    <div class="h-60 bg-gradient-to-br from-[#122b49] via-brand-darkest to-brand-surface relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-500" style="background-image: radial-gradient(circle at 30% 70%, rgba(179, 207, 229, 0.3) 0%, rgba(10, 25, 49, 0.9) 100%);"></div>
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">Social Campaign</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Social Media</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">High-Converting E-Commerce Ad Creatives</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Dynamic series of product advertisement posters designed for Instagram and Facebook feeds with high-impact typography.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Photoshop • Illustrator</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Creative Photo Manipulation -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="manipulation">
+                    <div class="h-60 bg-gradient-to-br from-brand-surface to-[#0a1931] relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:rotate-12 transition-transform">
+                                <i class="fa-solid fa-wand-sparkles"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">Photo Art & Retouching</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Manipulation</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">Surreal Digital Poster Composition</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Advanced multi-exposure blending, lighting manipulation, color grading, and texture compositing for high-end key visuals.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Adobe Photoshop</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Minimalist Logo Design Suite -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="branding">
+                    <div class="h-60 bg-gradient-to-br from-[#1A3D63] to-[#0A1931] relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">Modern Logo Suite</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Branding</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">Tech Startup Logo & Geometric Iconography</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Custom vector logo exploration constructed on Golden Ratio grids with primary, secondary, and badge variations.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Adobe Illustrator</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Print & Editorial Publications -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="print">
+                    <div class="h-60 bg-gradient-to-br from-[#122b49] to-[#0a1931] relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:-rotate-6 transition-transform">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">Corporate Profile</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Print & Editorial</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">Annual Company Profile & Product Catalog</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Clean multi-page layout grid with refined typography hierarchy, infographics, and press-ready CMYK pre-flight setup.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Adobe InDesign</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Restaurant / Food Brand Identity -->
+                <div class="project-item glass-card rounded-3xl overflow-hidden border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 group" data-category="social">
+                    <div class="h-60 bg-gradient-to-br from-brand-surface via-[#143354] to-brand-darkest relative overflow-hidden flex items-center justify-center p-6">
+                        <div class="relative z-10 text-center space-y-2">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-surface/90 border border-brand-light/30 flex items-center justify-center text-brand-light text-2xl shadow-glow group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-brand-light font-mono">F&B Visual Campaign</span>
+                        </div>
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-darkest/80 text-[10px] font-bold text-brand-light uppercase tracking-wider border border-brand-light/10">Social Media</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-brand-white group-hover:text-brand-light transition-colors">Food & Beverage Social Media Assets</h3>
+                        <p class="text-brand-light/70 text-xs leading-relaxed">
+                            Appetizing culinary photo retouching combined with attractive promotional offers, stories, and monthly social campaigns.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-mono text-brand-light/60">Photoshop • Illustrator</span>
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-light hover:text-brand-white flex items-center gap-1.5">
+                                <span>Case Study</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-20 px-6 bg-brand-darkest/60 border-t border-brand-surface/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block">Career Journey</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-white">Work Experience</h2>
+                <p class="text-brand-light/70 text-base">A timeline of my professional design career delivering value to diverse businesses.</p>
+            </div>
+
+            <!-- Experience Card -->
+            <div class="relative pl-8 md:pl-12 border-l-2 border-brand-accent/40 space-y-12">
+                <!-- Main Ongoing Role -->
+                <div class="relative group">
+                    <!-- Dot indicator on timeline -->
+                    <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-brand-darkest border-4 border-brand-light shadow-glow flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-brand-accent"></div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-8 border border-brand-light/10 hover:border-brand-accent/60 transition-all duration-300 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-2xl font-bold text-brand-white">Graphic Designer</h3>
+                                <p class="text-sm font-semibold text-brand-light">Full-Time & Freelance</p>
+                            </div>
+                            <span class="self-start sm:self-auto px-4 py-1.5 rounded-full bg-brand-surface border border-brand-accent/40 text-xs font-mono font-bold text-brand-light">
+                                2022 — Present (4+ Years)
+                            </span>
+                        </div>
+
+                        <p class="text-sm text-brand-light/80 leading-relaxed">
+                            Serving diverse corporate clients, digital agencies, and e-commerce stores across Egypt and the MENA region.
+                        </p>
+
+                        <!-- Highlights List -->
+                        <ul class="space-y-2.5 text-sm text-brand-light/80 pt-2">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-accent mt-1 text-xs"></i>
+                                <span>Designed high-impact social media creatives, branding assets, and marketing materials tailored to client business objectives.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-accent mt-1 text-xs"></i>
+                                <span>Developed complete visual identities and advertising campaigns strictly aligned with target customer demographics.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-accent mt-1 text-xs"></i>
+                                <span>Successfully managed multiple concurrent design projects while maintaining consistent quality standards and strict deadlines.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-accent mt-1 text-xs"></i>
+                                <span>Collaborated directly with marketing managers and clients to produce performance-driven ad campaigns that enhance conversion rates.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-accent mt-1 text-xs"></i>
+                                <span>Delivered press-ready print materials and digital assets across healthcare, retail, tech, and hospitality sectors.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-20 px-6 border-t border-brand-surface/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block">Credentials</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-white">Education & Certifications</h2>
+                <p class="text-brand-light/70 text-base">Academic background and certified credentials in industry-standard tools.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Academic Degree -->
+                <div class="glass-card rounded-3xl p-8 border border-brand-light/10 space-y-4 hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-surface border border-brand-accent/40 flex items-center justify-center text-brand-light text-2xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-brand-accent font-bold">University Degree</span>
+                    <h3 class="text-xl font-bold text-brand-white">Bachelor of Information Systems</h3>
+                    <p class="text-sm font-medium text-brand-light">Madina Higher Institute for Management & Technology</p>
+                    <p class="text-xs text-brand-light/70 leading-relaxed">
+                        Combines technical computational systems foundation with digital creative media applications and problem solving.
+                    </p>
+                </div>
+
+                <!-- Certification 1: Photoshop -->
+                <div class="glass-card rounded-3xl p-8 border border-brand-light/10 space-y-4 hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-[#001E36] border border-[#31A8FF]/40 flex items-center justify-center text-[#31A8FF] font-black text-2xl">
+                        Ps
+                    </div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-brand-accent font-bold">Professional Certification</span>
+                    <h3 class="text-xl font-bold text-brand-white">Adobe Photoshop Certified</h3>
+                    <p class="text-sm font-medium text-brand-light">Al-Faraby Academy</p>
+                    <p class="text-xs text-brand-light/70 leading-relaxed">
+                        Validated professional proficiency in photo editing, retouching, multi-layer compositing, and raster graphic creation.
+                    </p>
+                </div>
+
+                <!-- Certification 2: Illustrator -->
+                <div class="glass-card rounded-3xl p-8 border border-brand-light/10 space-y-4 hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-[#330000] border border-[#FF9A00]/40 flex items-center justify-center text-[#FF9A00] font-black text-2xl">
+                        Ai
+                    </div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-brand-accent font-bold">Professional Certification</span>
+                    <h3 class="text-xl font-bold text-brand-white">Adobe Illustrator Certified</h3>
+                    <p class="text-sm font-medium text-brand-light">Al-Faraby Academy</p>
+                    <p class="text-xs text-brand-light/70 leading-relaxed">
+                        Validated professional proficiency in vector graphics, logo creation, branding systems, and visual icon design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Hire Me Section -->
+    <section id="contact" class="py-24 px-6 bg-brand-darkest relative border-t border-brand-surface/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 sm:p-14 border border-brand-accent/30 shadow-card relative overflow-hidden">
+                <!-- Background visual glow -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-brand-accent/20 blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-surface text-brand-light border border-brand-accent/30 inline-block">Get In Touch</span>
+
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-brand-white leading-tight">
+                            Have an exciting project in mind? <br>
+                            <span class="gradient-text">Let's create together.</span>
+                        </h2>
+
+                        <p class="text-brand-light/80 text-base leading-relaxed">
+                            Whether you need a fresh brand identity, attention-grabbing social media campaigns, or creative direction, I am always ready to collaborate.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <!-- Direct Email -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-surface flex items-center justify-center text-brand-light text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-light/60 uppercase font-mono block">Direct Email</span>
+                                    <a href="mailto:mazenmazen129u@gmail.com" class="text-sm sm:text-base font-bold text-brand-white hover:text-brand-light transition-colors">mazenmazen129u@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Phone / WhatsApp -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-surface flex items-center justify-center text-brand-light text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-light/60 uppercase font-mono block">Phone & WhatsApp</span>
+                                    <a href="tel:010103537681" class="text-sm sm:text-base font-bold text-brand-white hover:text-brand-light transition-colors">010103537681 (+20)</a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-surface flex items-center justify-center text-brand-light text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-light/60 uppercase font-mono block">Location</span>
+                                    <span class="text-sm sm:text-base font-bold text-brand-white">Giza, Egypt</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Quick Reach Form & Links -->
+                    <div class="lg:col-span-6 bg-brand-darkest/70 rounded-2xl p-8 border border-brand-light/10 space-y-6">
+                        <h3 class="text-xl font-bold text-brand-white">Quick Connect</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- WhatsApp Button -->
+                            <a href="https://wa.me/2010103537681" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-300 flex flex-col items-center justify-center gap-2 text-center transition-all">
+                                <i class="fa-brands fa-whatsapp text-3xl"></i>
+                                <span class="font-bold text-sm">Message on WhatsApp</span>
+                                <span class="text-[11px] text-emerald-400/80">Fast Response</span>
+                            </a>
+
+                            <!-- Behance Button -->
+                            <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="p-4 rounded-2xl bg-brand-surface/70 hover:bg-brand-surface border border-brand-accent/40 text-brand-light hover:text-brand-white flex flex-col items-center justify-center gap-2 text-center transition-all">
+                                <i class="fa-brands fa-behance text-3xl"></i>
+                                <span class="font-bold text-sm">View Behance Portfolio</span>
+                                <span class="text-[11px] text-brand-light/60">@Mazen_Pixel</span>
+                            </a>
+                        </div>
+
+                        <!-- Email Copier Box -->
+                        <div class="p-4 rounded-2xl bg-brand-surface/40 border border-brand-light/10 flex items-center justify-between gap-4">
+                            <div class="truncate">
+                                <span class="text-[10px] uppercase font-mono text-brand-light/60 block">Copy Email Address</span>
+                                <span id="email-text" class="text-xs sm:text-sm font-semibold text-brand-white truncate block">mazenmazen129u@gmail.com</span>
+                            </div>
+                            <button id="copy-btn" class="px-4 py-2 rounded-xl bg-brand-accent hover:bg-brand-light hover:text-brand-darkest text-xs font-bold text-brand-white transition-all duration-200 shrink-0 flex items-center gap-2">
+                                <i class="fa-regular fa-copy"></i>
+                                <span id="copy-label">Copy</span>
+                            </button>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <p class="text-xs text-brand-light/60">
+                                Usually responds within a few hours. Open to full-time remote contracts and freelance missions.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-brand-surface/60 bg-brand-darkest text-center">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-accent to-brand-light flex items-center justify-center text-brand-darkest font-extrabold text-sm">
+                    M
+                </div>
+                <span class="text-sm font-bold text-brand-white">Mazen Walid Abdel Razek</span>
+            </div>
+
+            <p class="text-xs text-brand-light/60">
+                &copy; <span id="year">2026</span> Mazen Walid (Mazen_Pixel). Designed with custom brand identity.
+            </p>
+
+            <div class="flex items-center gap-4 text-brand-light">
+                <a href="https://behance.net/Mazen_Pixel" target="_blank" rel="noopener noreferrer" class="hover:text-brand-white transition-colors" title="Behance">
+                    <i class="fa-brands fa-behance text-lg"></i>
+                </a>
+                <a href="https://wa.me/2010103537681" target="_blank" rel="noopener noreferrer" class="hover:text-brand-white transition-colors" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <a href="mailto:mazenmazen129u@gmail.com" class="hover:text-brand-white transition-colors" title="Email">
+                    <i class="fa-regular fa-envelope text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Floating Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full glass-card border border-brand-accent text-brand-light hover:text-brand-white hover:bg-brand-accent flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 z-50 shadow-glow">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Interactive Client-side Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Lightbox functionality
+        const lightbox = document.createElement('div');
+        lightbox.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-brand-darkest/95 backdrop-blur-sm hidden';
+        lightbox.innerHTML = `
+            <div class="relative max-w-4xl w-full p-4">
+                <button class="absolute -top-12 right-0 text-brand-white text-3xl hover:text-brand-accent transition-colors"><i class="fa-solid fa-xmark"></i></button>
+                <div id="lightbox-container" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+
+        function openLightbox(images, title) {
+            const container = document.getElementById('lightbox-container');
+            container.innerHTML = '';
+            images.forEach(img => {
+                const div = document.createElement('div');
+                div.className = 'overflow-hidden rounded-2xl border border-brand-light/10';
+                div.innerHTML = `<img src="${img}" class="w-full h-auto transform hover:scale-105 transition-transform duration-500">`;
+                container.appendChild(div);
+            });
+            lightbox.classList.remove('hidden');
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.closest('button')) {
+                lightbox.classList.add('hidden');
+            }
+        });
+
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-accent', 'text-brand-white');
+                    b.classList.add('bg-brand-surface', 'text-brand-light');
+                });
+                btn.classList.remove('bg-brand-surface', 'text-brand-light');
+                btn.classList.add('bg-brand-accent', 'text-brand-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Copy Email to Clipboard
+        const copyBtn = document.getElementById('copy-btn');
+        const copyLabel = document.getElementById('copy-label');
+        const emailText = document.getElementById('email-text').textContent;
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailText).then(() => {
+                copyLabel.textContent = 'Copied!';
+                copyBtn.classList.add('bg-emerald-600');
+                setTimeout(() => {
+                    copyLabel.textContent = 'Copy';
+                    copyBtn.classList.remove('bg-emerald-600');
+                }, 2000);
+            });
+        });
+
+        // Back to top button visibility
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
